@@ -1,0 +1,6 @@
+@extends('layouts.plantilla')
+
+@section('tittle','Index')
+@section('content')
+<h1> Bienvenido a la pagina de cursos </h1> 
+@endsection
