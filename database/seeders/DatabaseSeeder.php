@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Curso;
+use App\Models\User;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -20,5 +21,9 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(CursoSeeder::class); //para que se ejecute el CursoSeeder 
+        //User::factory(7)->create();//Recomendable exportarlo asi 
+        User::factory(7)->create();
+
+
     }
 }
