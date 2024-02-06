@@ -9,5 +9,5 @@ class Curso extends Model
 {
     use HasFactory;
 
-    protected $table="users"; //para que controler otra tabla
+   // protected $table="users"; //para que controler otra tabla
 }
