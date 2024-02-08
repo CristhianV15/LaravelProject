@@ -57,4 +57,18 @@ class User extends Authenticatable
             }
         ) ;
     }
+    protected function email() :Attribute {
+        return new Attribute(
+            //Función flecha
+            get: fn ($value) => ucwords($value),
+            /*   get: function ($value) { //Accesores lo trasnforman cuando se consulta a la bd y se retorna un valor
+                return  ucwords($value);
+            },
+        */
+            set: function($value){ //Mutadores lo cambia antes de almacenarlos
+                return strtolower($value); //el nombre a minisculas
+            }
+        ) ;
+    }
+
 }
