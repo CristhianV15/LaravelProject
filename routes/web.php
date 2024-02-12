@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CursoController;
+use App\Models\Curso;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,11 @@ Route::get('/', HomeController::class);
 
 Route::controller(CursoController::class)-> group(function () {
 
-    Route::get('cursos','index'); //Apunta a [clase,'metodo']
+    Route::get('cursos','index')->name('cursos.index'); //Apunta a [clase,'metodo']
+ 
     //Ruta para formulario y tener curso 
-    Route:: get('cursos/create','create');
-    Route::get('cursos/{curso}', 'show');;
+    Route:: get('cursos/create','create')->name('cursos.create');
+    Route::get('cursos/{curso}', 'show')->name('cursos.show');
 });
 
 
