@@ -6,7 +6,9 @@
 <a href="{{route('cursos.create')}}">Crear Curso</a>
     <ul> 
         @foreach ($cursos as $curso)
-            <li> {{$curso->name}} </li>
+            <li>
+                <a href="{{route('cursos.show', $curso->id)}}"> {{$curso->name}}</a>
+            </li>
         @endforeach
     </ul>
     {{$cursos->links()}}

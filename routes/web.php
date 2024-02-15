@@ -26,7 +26,7 @@ Route::controller(CursoController::class)-> group(function () {
  
     //Ruta para formulario y tener curso 
     Route:: get('cursos/create','create')->name('cursos.create');
-    Route::get('cursos/{curso}', 'show')->name('cursos.show');
+    Route::get('cursos/{id}', 'show')->name('cursos.show');
 });
 
 

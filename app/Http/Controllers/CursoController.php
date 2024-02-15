@@ -18,10 +18,14 @@ class CursoController extends Controller
         return view('Cursos.create'); 
     }
 
-    public function show($curso){
+    public function show($id){
         //Saca la informacion de la url -> almacenada en la variable y se concatena con el mensaje 
         //Forma para enviar la variable con el mismo nombre a la vista , enviar al costado de la vista
         //compact ('curso');
+
+        //Buscar el curso con el id
+        $curso = Curso::find($id);
+        //return $cursos;
         return view('Cursos.show', ['curso'=>$curso]); //enviar variable
     }
 }
