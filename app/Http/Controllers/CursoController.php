@@ -9,7 +9,7 @@ class CursoController extends Controller
 {
     public function index(){
         //Recuperar datos de bd para mostrar 
-        $cursos = Curso::paginate();
+        $cursos = Curso::orderBy('id','desc')->paginate();
         //return $cursos; para probar envio a vista
         return view('Cursos.index', compact('cursos')); 
     }
@@ -29,7 +29,17 @@ class CursoController extends Controller
         return view('Cursos.show', ['curso'=>$curso]); //enviar variable
     }
 
-    public function store(){
-        
+    public function store(Request $request ){
+        //Nueva instancia del curso 
+        $curso = new Curso();
+        //asignar valores de request a la instancia de curso 
+        $curso ->name = $request->name;
+        $curso -> descripcion = $request->descripcion;
+        $curso -> categoria = $request ->categoria;
+
+        //return $curso; //probar datos recibidos en nueva instancia 
+        //Guardar el nuevo curso en bd
+        $curso-> save();
+        // return $request->all(); //para mostrar todos los datos almacenados en request en vista
     }
 }
