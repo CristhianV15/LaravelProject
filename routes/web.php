@@ -22,7 +22,7 @@ Route::get('/', HomeController::class);
 
 Route::controller(CursoController::class)-> group(function () {
 
-    Route::get('cursos','index')->name('cursos.index'); //Apunta a [clase,'metodo']
+    Route::get('cursos','index')->name('cursos.index'); //Apunta a [clase,'metodo'], estos metodos estan en httcontroller-> curso controller
  
     //Ruta para formulario y tener curso 
     Route:: get('cursos/create','create')->name('cursos.create');

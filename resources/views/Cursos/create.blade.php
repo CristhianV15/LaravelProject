@@ -4,8 +4,10 @@
 
 @section('content')
 <h1>Pagina para crear cursos </h1>
-
-    <form action="">
+  
+    <form action="  {{route('cursos.store')}}" method="POST">
+       <!--Token que genera campo hidden para validar formulario -->
+       @csrf 
         <label for="">
             Nombre:
             <br>
@@ -24,5 +26,7 @@
             <br>
             <input type="text" name="categoria">
         </label>
+        <br>
+        <button type="submit">Enviar formulario</button>
     </form>
 @endsection

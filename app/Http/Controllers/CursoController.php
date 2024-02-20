@@ -28,4 +28,8 @@ class CursoController extends Controller
         //return $cursos;
         return view('Cursos.show', ['curso'=>$curso]); //enviar variable
     }
+
+    public function store(){
+        
+    }
 }
