@@ -26,6 +26,10 @@ Route::controller(CursoController::class)-> group(function () {
  
     //Ruta para formulario y tener curso 
     Route:: get('cursos/create','create')->name('cursos.create');
+    //Recibir informacion desde el formulario 
+    Route::post('cursos/create','store')->name('cursos.store');
+
+
     Route::get('cursos/{id}', 'show')->name('cursos.show');
 });
 
