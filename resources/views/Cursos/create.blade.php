@@ -13,6 +13,13 @@
             <br>
             <input type="text" name="name" id="">            
         </label>
+
+       <!--Para validar los campos se usa el atributo de name -->  
+        @error('name') 
+            <br>
+            <span>*{{$message}}</span>
+            <br>
+        @enderror
         <br>    
         <label>
             Descripcion:
@@ -20,12 +27,21 @@
             <textarea name="descripcion" rows="5"></textarea>
         </label>
         <br>    
-
+        @error('descripcion') 
+        <br>
+        <span>*{{$message}}</span>
+        <br>
+        @enderror
         <label>
             Categoria: 
             <br>
             <input type="text" name="categoria">
         </label>
+        @error('categoria') 
+        <br>
+        <span>*{{$message}}</span>
+        <br>
+        @enderror
         <br>
         <button type="submit">Enviar formulario</button>
     </form>
