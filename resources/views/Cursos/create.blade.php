@@ -11,7 +11,7 @@
         <label for="">
             Nombre:
             <br>
-            <input type="text" name="name" id="">            
+            <input type="text" name="name" value="{{old('name')}}" id="">            
         </label>
 
        <!--Para validar los campos se usa el atributo de name -->  
@@ -24,7 +24,7 @@
         <label>
             Descripcion:
             <br>
-            <textarea name="descripcion" rows="5"></textarea>
+            <textarea name="descripcion" rows="5" >{{old('descripcion')}}</textarea>
         </label>
         <br>    
         @error('descripcion') 
@@ -35,7 +35,7 @@
         <label>
             Categoria: 
             <br>
-            <input type="text" name="categoria">
+            <input type="text" name="categoria" value={{old('categoria')}}>
         </label>
         @error('categoria') 
         <br>
