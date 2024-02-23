@@ -45,6 +45,13 @@ class CursoController extends Controller
 
     }
     public function store(Request $request ){
+        //Validaciones
+
+        $request->validate([
+            'name' => 'required',
+            'descripcion'=> 'required',
+            'categoria' => 'required' 
+        ]);
         //Nueva instancia del curso 
         $curso = new Curso();
         //asignar valores de request a la instancia de curso 
